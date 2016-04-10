@@ -11,7 +11,10 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.engine("js", require("express-function-views"));
+
+// app.engine("js", require("express-js-views"));
+app.engine("js", require("../")); // use local version of express-js-views
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'js');
 app.set("view cache", false);
